@@ -8,7 +8,7 @@ const contact = {
     district: "Darjeeling",
     state: "West Bengal",
     country: "India",
-    addressLine: "Hill Cart Road, Siliguri, Darjeeling, West Bengal — 734001",
+    addressLine: "Kawakhali More, Near North Bengal Medical College & Hospital, Sushruta Nagar, Darjeeling - 734202",
     googleMapsQuery: "North East Multispeciality Hospital, Siliguri, Darjeeling, West Bengal",
   },
   phone: {
