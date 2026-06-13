@@ -94,6 +94,7 @@ const DoctorDetailPage = () => {
                 icon={Clock}
                 label="Availability"
                 value={doctor.availability}
+                testId="doctor-availability"
               />
               <InfoTile
                 icon={Languages}
@@ -103,12 +104,12 @@ const DoctorDetailPage = () => {
             </div>
 
             <h2 className="h3-display mt-10">About {doctor.name.split(" ")[1]}</h2>
-            <p className="body-base mt-3">{doctor.bio}</p>
+            <p data-testid="doctor-bio" className="body-base mt-3">{doctor.bio}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/appointment"
-                data-testid="doctor-book-btn"
+                data-testid="doctor-detail-book-btn"
                 className="btn btn-primary"
               >
                 <Calendar size={16} /> Book Appointment
@@ -127,6 +128,7 @@ const DoctorDetailPage = () => {
 
       {related.length > 0 && (
         <section
+          data-testid="related-doctors"
           className="section"
           style={{ backgroundColor: "rgb(var(--color-alt))" }}
         >
@@ -154,8 +156,8 @@ const DoctorDetailPage = () => {
   );
 };
 
-const InfoTile = ({ icon: Icon, label, value }) => (
-  <div className="rounded-2xl border border-slate-100 bg-white p-4">
+const InfoTile = ({ icon: Icon, label, value, testId }) => (
+  <div data-testid={testId} className="rounded-2xl border border-slate-100 bg-white p-4">
     <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-500 font-semibold">
       <Icon size={14} /> {label}
     </div>

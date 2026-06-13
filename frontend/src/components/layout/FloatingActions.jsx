@@ -9,7 +9,7 @@ const FloatingActions = () => {
   return (
     <div
       data-testid="floating-actions"
-      className="fixed bottom-5 right-4 md:bottom-7 md:right-7 z-40 flex flex-col items-end gap-3"
+      className="fixed bottom-24 right-4 md:bottom-24 md:right-7 z-[9000] flex flex-col items-end gap-3"
     >
       {open && (
         <div className="flex flex-col items-end gap-2.5 anim-fade-up">

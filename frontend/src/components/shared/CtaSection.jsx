@@ -42,7 +42,7 @@ const CtaSection = ({
   }
 
   return (
-    <section className="section" data-testid="cta-section">
+    <section className="section" data-testid="cta-section final-cta-section">
       <div className="container-page">
         <div
           className="rounded-[2rem] overflow-hidden relative"

@@ -52,7 +52,10 @@ const HomePage = () => {
       />
 
       {/* HERO ------------------------------------------------------------ */}
-      <section className="relative overflow-hidden bg-white border-b border-slate-100">
+      <section
+        data-testid="hero-section"
+        className="relative overflow-hidden bg-white border-b border-slate-100"
+      >
         <div
           aria-hidden="true"
           className="absolute inset-0 grain-bg pointer-events-none"
@@ -211,7 +214,7 @@ const HomePage = () => {
       </section>
 
       {/* DEPARTMENTS --------------------------------------------------- */}
-      <section className="section">
+      <section data-testid="departments-grid" className="section">
         <div className="container-page">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <SectionHeading
@@ -237,6 +240,7 @@ const HomePage = () => {
 
       {/* FEATURED DOCTORS ---------------------------------------------- */}
       <section
+        data-testid="featured-doctors"
         className="section"
         style={{ backgroundColor: "rgb(var(--color-alt))" }}
       >
@@ -264,7 +268,7 @@ const HomePage = () => {
       </section>
 
       {/* WHY CHOOSE US ------------------------------------------------- */}
-      <section className="section">
+      <section data-testid="why-choose-us" className="section">
         <div className="container-page">
           <SectionHeading
             eyebrow="Why North East Hospital"
@@ -306,6 +310,7 @@ const HomePage = () => {
 
       {/* FACILITIES ---------------------------------------------------- */}
       <section
+        data-testid="facilities-section"
         className="section"
         style={{ backgroundColor: "rgb(var(--color-paper))" }}
       >
@@ -337,7 +342,7 @@ const HomePage = () => {
       </section>
 
       {/* STATISTICS ---------------------------------------------------- */}
-      <section className="section">
+      <section data-testid="statistics-section" className="section">
         <div className="container-page">
           <SectionHeading
             align="center"
@@ -355,6 +360,7 @@ const HomePage = () => {
 
       {/* TESTIMONIALS -------------------------------------------------- */}
       <section
+        data-testid="testimonials-section"
         className="section"
         style={{ backgroundColor: "rgb(var(--color-alt))" }}
       >
@@ -372,7 +378,7 @@ const HomePage = () => {
       </section>
 
       {/* FAQ ----------------------------------------------------------- */}
-      <section className="section">
+      <section data-testid="faq-section" className="section">
         <div className="container-page grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <SectionHeading

@@ -32,7 +32,7 @@ const DepartmentDetailPage = () => {
         ]}
       />
 
-      <section className="container-page py-10 md:py-14 grid lg:grid-cols-12 gap-10 items-center">
+      <section data-testid="dept-overview" className="container-page py-10 md:py-14 grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-7">
           <p className="eyebrow mb-3">Department</p>
           <h1 className="h1-display">{dept.name}</h1>
@@ -66,6 +66,7 @@ const DepartmentDetailPage = () => {
       </section>
 
       <section
+        data-testid="dept-services"
         className="section"
         style={{ backgroundColor: "rgb(var(--color-paper))" }}
       >
@@ -94,7 +95,7 @@ const DepartmentDetailPage = () => {
       </section>
 
       {docs.length > 0 && (
-        <section className="section">
+        <section data-testid="dept-doctors" className="section">
           <div className="container-page">
             <div className="flex items-end justify-between mb-8">
               <SectionHeading eyebrow="Our team" title={`Consultants in ${dept.name}`} />
@@ -116,6 +117,7 @@ const DepartmentDetailPage = () => {
 
       {dept.faqs && dept.faqs.length > 0 && (
         <section
+          data-testid="dept-faqs"
           className="section"
           style={{ backgroundColor: "rgb(var(--color-alt))" }}
         >

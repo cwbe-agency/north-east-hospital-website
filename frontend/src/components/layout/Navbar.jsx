@@ -120,6 +120,7 @@ const Navbar = () => {
                 to={link.to}
                 end={link.to === "/"}
                 data-testid={`mobile-${link.testId}`}
+                onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   `block px-3 py-3 rounded-xl text-base font-medium ${
                     isActive
