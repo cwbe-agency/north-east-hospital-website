@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Calendar, Phone, Plus } from "lucide-react";
 import navigation from "@/data/navigation";
 import contact from "@/data/contact";
+import hospitalLogo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -33,13 +34,11 @@ const Navbar = () => {
           data-testid="brand-logo-link"
           className="flex items-center gap-2.5 shrink-0"
         >
-          <span
-            className="grid h-10 w-10 place-items-center rounded-xl text-white"
-            style={{ backgroundColor: "rgb(var(--color-primary))" }}
-            aria-hidden="true"
-          >
-            <Plus size={22} strokeWidth={2.5} />
-          </span>
+          <img
+            src={hospitalLogo}
+            alt="North East Multispeciality Hospital"
+            className="h-14 w-14 object-contain flex-shrink-0"
+          />
           <span className="flex flex-col leading-none">
             <span
               className="font-bold tracking-tight text-[15px] sm:text-base"
