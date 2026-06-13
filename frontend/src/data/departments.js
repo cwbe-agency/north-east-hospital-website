@@ -104,7 +104,7 @@ const departments = [
       "Cervical cancer screening",
       "Menopause management",
     ],
-    doctorSlugs: ["dr-mitali-banerjee"],
+    doctorSlugs: ["dr-rajesh-banerjee"],
     faqs: [
       {
         q: "Are female doctors available?",

@@ -57,8 +57,8 @@ const doctors = [
     featured: true,
   },
   {
-    slug: "dr-mitali-banerjee",
-    name: "Dr. Mitali Banerjee",
+    slug: "dr-rajesh-banerjee",
+    name: "Dr. Rajesh Banerjee",
     qualification: "MBBS, MS (Obstetrics & Gynecology)",
     specialization: "Gynaecologist & Obstetrician",
     departmentSlug: "gynecology",
