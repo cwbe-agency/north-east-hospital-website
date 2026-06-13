@@ -7,6 +7,8 @@ import StatCard from "@/components/shared/StatCard";
 import CtaSection from "@/components/shared/CtaSection";
 import statistics from "@/data/statistics";
 import contact from "@/data/contact";
+import LeadershipSection from "@/components/shared/LeadershipSection";
+import leadership from "@/data/leadership";
 
 const values = [
   {
@@ -76,6 +78,10 @@ const AboutPage = () => (
         </div>
       </div>
     </section>
+    {/* Manager Information */}
+    <LeadershipSection
+      {...leadership.managingDirector}
+    />
 
     {/* STATS */}
     <section
