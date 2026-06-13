@@ -1,0 +1,44 @@
+{
+  "summary": "Frontend-only E2E review of NEMH Siliguri healthcare site across 13 routes (desktop 1920 and mobile 390). All routes load with correct <title>, single <h1>, emergency banner sitewide, footer, sticky navbar. Doctors directory shows 8 doctors and search/department filters both work (Roy -> 1, Cardiology -> 1). Appointment form submits and shows appointment-success. Contact form submits and shows contact-success. Contact map iframe and contact-emergency-call present. Blog (4 posts), Treatments (6), Departments (6), Careers (4 jobs) all render. Department-doctor filter on appointment page works (only doctors of selected dept shown). 404 page shown for unknown route. Mobile menu toggle/panel works and closes on cross-route navigation. No console errors detected.\n\nIssues found: (1) CRITICAL UX BUG - real-user clicks on the bottom-right floating action toggle (data-testid='float-toggle-btn') are intercepted by the platform's '#emergent-badge' overlay (z-index:9999 vs floating-actions z-index:40); the secondary buttons (Call/WhatsApp/Book) never become reachable in real interactions. (2) Department detail page <title> stays generic ('Departments · ...') instead of using the department name. (3) Spec-mentioned data-testids missing on detail pages: doctor-detail-book-btn, related-doctors, doctor-bio, doctor-availability, dept-overview, dept-services, dept-doctors, dept-faqs (content is present, just not tagged with the requested testids). (4) Sections on HomePage do not have section-level data-testids (hero, departments-grid, featured-doctors, why-choose-us, facilities, statistics, testimonials, faq, final-cta) — only quick-appointment-strip is tagged. (5) Mobile menu does not auto-close when the clicked link points to the same path the user is already on (e.g., Home while already on /).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "FloatingActions", "issue": "float-toggle-btn click is intercepted by the platform '#emergent-badge' fixed overlay (z-index 9999) that sits at the same bottom-right corner. Real users cannot open Call/WhatsApp/Book quick actions; Playwright only opens it with force=True. Raise FloatingActions z-index above 9999 OR offset position (e.g., bottom-20 / right-6) so it no longer overlaps the emergent-badge bounding box.", "selector": "[data-testid='float-toggle-btn']", "priority": "HIGH"},
+      {"component": "Navbar (mobile)", "issue": "Mobile menu panel does not close when the chosen link is the same as the current pathname (useEffect on location.pathname doesn't fire). Reset open=false inside onClick of each NavLink as well.", "selector": "[data-testid='mobile-menu-panel']", "priority": "LOW"}
+    ],
+    "integration_issues": [
+      {"flow": "Department detail SEO", "issue": "Page <title> on /departments/:slug remains 'Departments · North East Multispeciality Hospital' instead of the department-specific title (e.g., 'General Medicine · ...'). Helmet inside DepartmentDetailPage is either missing or being overridden by parent.", "affected_selectors": ["title"]}
+    ],
+    "design_issues": [
+      {"screen": "All pages", "issues": ["Phone numbers everywhere render as +91-XXXXX-XXXXX placeholders — fine for a stub build, but should be replaced before launch."]}
+    ],
+    "missing_testids": [
+      {"page": "HomePage", "expected": ["hero", "departments-grid", "featured-doctors", "why-choose-us", "facilities", "statistics", "testimonials", "faq", "final-cta"], "note": "Sections render but lack section-level data-testid attributes the QA suite was told to target."},
+      {"page": "DoctorDetailPage", "expected": ["doctor-detail-book-btn", "related-doctors", "doctor-bio", "doctor-availability"], "actual_present": ["doctor-book-btn", "doctor-call-btn", "doctor-dept-link"], "note": "Either rename existing testids to match spec, or add the spec-required testids."},
+      {"page": "DepartmentDetailPage", "expected": ["dept-overview", "dept-services", "dept-doctors", "dept-faqs"], "actual_present": ["dept-book-btn", "dept-call-btn", "faq-accordion"], "note": "Sections render but lack the testids the QA suite was told to use."}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Raise FloatingActions container z-index to >= 10000 (or move it away from the emergent-badge corner) so users can actually open the Call/WhatsApp/Book floating actions.",
+    "Add a Helmet <title> in DepartmentDetailPage that uses the department name (currently falls back to listing-page title).",
+    "Add or rename testids on DoctorDetailPage to: doctor-detail-book-btn, related-doctors, doctor-bio, doctor-availability.",
+    "Add testids on DepartmentDetailPage: dept-overview, dept-services, dept-doctors, dept-faqs.",
+    "Add section-level testids on HomePage (hero, departments-grid, featured-doctors, why-choose-us, facilities, statistics, testimonials, faq, final-cta).",
+    "In Navbar mobile menu, close panel on NavLink onClick as well so same-path clicks also collapse the menu."
+  ],
+  "critical_code_review_comments": [
+    "FloatingActions uses z-40 but is placed in the same fixed bottom-right corner as the platform's z-9999 'Made with Emergent' badge — overlay always wins for real-user clicks. This pattern is brittle; any future floating widget should explicitly own a corner or use a higher z-index.",
+    "DepartmentDetailPage appears to inherit the listing page title from Helmet — verify a per-route Helmet block exists with department.name in the title and meta description (otherwise SEO for each department page is broken).",
+    "Mobile menu close is keyed solely on location.pathname change; clicking the active link is a no-op for the listener, leaving the panel open. Combine pathname effect with explicit setOpen(false) inside NavLink onClick.",
+    "Spec-requested data-testids are inconsistently named in implementation (doctor-book-btn vs doctor-detail-book-btn). Establish a single naming convention so automated tests don't need rewriting."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only build)", "frontend": "~85% — all routes/forms/filters work; floating actions UX is broken behind platform badge, several spec testids missing, and dept-detail SEO title not dynamic."},
+  "test_credentials": "N/A — no auth in this build.",
+  "seed_data_creation": "None — all data is static in /app/frontend/src/data/*.",
+  "retest_needed": true,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Use REACT_APP_BACKEND_URL from /app/frontend/.env (https://siliguri-care.preview.emergentagent.com). Backend is not deployed/used. The blocking issue to retest first is FloatingActions vs #emergent-badge z-index/position. Then retest dept-detail <title>, then verify the renamed/new data-testids. Routes verified to work: /, /about, /doctors (+filters), /doctors/:slug, /departments, /departments/:slug, /appointment (form submit), /contact (form submit + map), /careers (4 jobs), /blog (4 cards), /blog/5-everyday-habits-for-a-healthy-heart, /treatments (6 cards), /treatments/knee-replacement, /unknown-route (404). Department->Doctor filter on /appointment was confirmed to reduce options to 4 when a specific dept is chosen.",
+  "rca of the issue": "FloatingActions container has z-index 40 (Tailwind z-40) and is anchored at bottom-5 right-4 / md:bottom-7 right-7. The Emergent platform badge (#emergent-badge) is also fixed at bottom-right with z-index 9999. Their bounding boxes overlap, so real-user pointer events on float-toggle-btn are captured by the badge link. Fix: either bump FloatingActions wrapper to z-[10000] or shift it (e.g., bottom-24 on mobile, bottom-7 right-24 on desktop) so it no longer sits under the badge. Reproduction: open /, attempt to click the green '+' bottom-right button without Playwright force; aria-expanded stays 'false' and quick-action buttons never render. Verified via Playwright error: '<a target=\"_blank\" id=\"emergent-badge\"> intercepts pointer events'."
+}
