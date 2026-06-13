@@ -17,7 +17,7 @@ const blog = [
     excerpt:
       "A quick guide for parents on fever, cough and the warning signs that need immediate medical attention.",
     category: "Pediatrics",
-    author: "Dr. Anirban Ghosh",
+    author: "Dr. Sakshi Ghosh",
     date: "2026-01-04",
     readTime: "4 min read",
     image:
@@ -41,7 +41,7 @@ const blog = [
     excerpt:
       "A practical checklist of what to expect before, during and after your knee replacement.",
     category: "Orthopedics",
-    author: "Dr. Sandeep Thapa",
+    author: "Dr. Sneha Thapa",
     date: "2025-12-15",
     readTime: "7 min read",
     image:

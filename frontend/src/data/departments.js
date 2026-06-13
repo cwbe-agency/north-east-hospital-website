@@ -78,7 +78,7 @@ const departments = [
       "Sports injury rehabilitation",
       "Physiotherapy & pain management",
     ],
-    doctorSlugs: ["dr-sandeep-thapa"],
+    doctorSlugs: ["dr-sneha-thapa"],
     faqs: [
       {
         q: "Do you treat children's fractures?",
@@ -130,7 +130,7 @@ const departments = [
       "Asthma & allergy management",
       "Adolescent health counselling",
     ],
-    doctorSlugs: ["dr-anirban-ghosh"],
+    doctorSlugs: ["dr-sakshi-ghosh"],
     faqs: [
       {
         q: "What is the right age for a first paediatric visit?",

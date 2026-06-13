@@ -43,8 +43,8 @@ const doctors = [
     featured: true,
   },
   {
-    slug: "dr-sandeep-thapa",
-    name: "Dr. Sandeep Thapa",
+    slug: "dr-sneha-thapa",
+    name: "Dr. Sneha Thapa",
     qualification: "MBBS, MS (Orthopedics)",
     specialization: "Orthopedic & Joint Replacement Surgeon",
     departmentSlug: "orthopedics",
@@ -71,8 +71,8 @@ const doctors = [
     featured: true,
   },
   {
-    slug: "dr-anirban-ghosh",
-    name: "Dr. Anirban Ghosh",
+    slug: "dr-sakshi-ghosh",
+    name: "Dr. Sakshi Ghosh",
     qualification: "MBBS, MD (Pediatrics)",
     specialization: "Consultant Paediatrician",
     departmentSlug: "pediatrics",
