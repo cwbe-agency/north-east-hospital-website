@@ -1,0 +1,111 @@
+{
+  "theme_archetype": {
+    "name": "Organic & Earthy",
+    "mode": "Light",
+    "emotion": "Trustworthy, Professional, Safe, Accessible, Calm"
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#065F46",
+      "light": "#10B981",
+      "dark": "#064E3B",
+      "foreground": "#FFFFFF"
+    },
+    "secondary": {
+      "DEFAULT": "#0D9488",
+      "light": "#14B8A6",
+      "dark": "#0F766E",
+      "foreground": "#FFFFFF"
+    },
+    "accent": {
+      "DEFAULT": "#DC2626",
+      "light": "#EF4444",
+      "dark": "#B91C1C",
+      "foreground": "#FFFFFF"
+    },
+    "background": {
+      "DEFAULT": "#F8FAFC",
+      "paper": "#FFFFFF",
+      "alt": "#F1F5F9"
+    },
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#334155",
+      "muted": "#64748B"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Manrope', sans-serif",
+      "body": "'Inter', sans-serif"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-bold text-slate-900",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-semibold text-slate-900",
+      "h3": "text-xl sm:text-2xl tracking-tight font-semibold text-slate-900",
+      "h4": "text-lg sm:text-xl font-medium text-slate-900",
+      "body": "text-base text-slate-700 leading-relaxed",
+      "small": "text-sm text-slate-500",
+      "overline": "text-xs font-bold tracking-[0.2em] uppercase text-emerald-700"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-16 md:py-24 lg:py-32",
+    "gap": "gap-8 md:gap-12",
+    "border_radius": "rounded-2xl",
+    "shadows": {
+      "card": "shadow-sm hover:shadow-md transition-shadow duration-300",
+      "floating": "shadow-lg"
+    }
+  },
+  "components": {
+    "navigation": "Sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm. Logo left, Links center, CTAs right. Mobile hamburger menu required.",
+    "emergency_banner": "Fixed or absolute at the very top. Background red-600, text white. 24/7 Emergency contact info.",
+    "buttons": {
+      "primary": "bg-emerald-800 text-white hover:bg-emerald-900 rounded-xl px-6 py-3 font-medium transition-colors",
+      "secondary": "bg-teal-700 text-white hover:bg-teal-800 rounded-xl px-6 py-3 font-medium transition-colors",
+      "accent": "bg-red-600 text-white hover:bg-red-700 rounded-xl px-6 py-3 font-medium transition-colors",
+      "outline": "border-2 border-emerald-800 text-emerald-800 hover:bg-emerald-50 rounded-xl px-6 py-3 font-medium transition-colors"
+    },
+    "cards": "bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-all. Use solid flat surfaces, NO glassmorphism.",
+    "floating_actions": "Fixed bottom right. Stacked vertical buttons for Call, WhatsApp, Book. Mobile friendly.",
+    "hero": "Split layout or image with solid overlay box. No heavy gradients over the whole image. Ensure text contrast."
+  },
+  "images": {
+    "hero_hospital": "https://images.unsplash.com/photo-1587351021821-f871837248c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBob3NwaXRhbCUyMGJ1aWxkaW5nJTIwZXh0ZXJpb3J8ZW58MHx8fHwxNzgxMzI1MzE2fDA&ixlib=rb-4.1.0&q=85",
+    "doctors": [
+      "https://images.unsplash.com/photo-1758691461516-7e716e0ca135?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHw0fHxzbWlsaW5nJTIwZG9jdG9yJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzgxMzI1MzE1fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1673865641073-4479f93a7776?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwzfHxzbWlsaW5nJTIwZG9jdG9yJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzgxMzI1MzE1fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1622253694238-3b22139576c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxzbWlsaW5nJTIwZG9jdG9yJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzgxMzI1MzE1fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxzbWlsaW5nJTIwZG9jdG9yJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzgxMzI1MzE1fDA&ixlib=rb-4.1.0&q=85"
+    ],
+    "emergency": [
+      "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1601839181465-c33194a13cb6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwyfHxob3NwaXRhbCUyMGVtZXJnZW5jeSUyMHJvb218ZW58MHx8fHwxNzgxMzI1MzE2fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1758404958502-44f156617bae?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwxfHxob3NwaXRhbCUyMGVtZXJnZW5jeSUyMHJvb218ZW58MHx8fHwxNzgxMzI1MzE2fDA&ixlib=rb-4.1.0&q=85"
+    ],
+    "patient_care": [
+      "https://images.unsplash.com/photo-1584516150909-c43483ee7932?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxwYXRpZW50JTIwY2FyZSUyMHNtaWxpbmd8ZW58MHx8fHwxNzgxMzI1MzE1fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1770134223774-13b735e29201?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxwYXRpZW50JTIwY2FyZSUyMHNtaWxpbmd8ZW58MHx8fHwxNzgxMzI1MzE1fDA&ixlib=rb-4.1.0&q=85"
+    ]
+  },
+  "accessibility": {
+    "contrast": "Ensure APCA/WCAG AA minimums. White text on Primary Green/Teal/Red.",
+    "testing": "All interactive elements and key info MUST include a data-testid attribute in kebab-case. Example: data-testid='book-appointment-btn'",
+    "motion": "Respect prefers-reduced-motion. Keep animations subtle (opacity and slight transform)."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "Clean, outlined, consistent stroke width (2px)"
+  },
+  "instructions_to_main_agent": [
+    "Build frontend-only React Router application as requested.",
+    "Create multi-page architecture: /, /about, /doctors, /doctors/:slug, /departments, /departments/:slug, /appointment, /contact, /careers, /blog, /blog/:slug, /treatments, /treatments/:slug.",
+    "Implement react-helmet-async for SEO metadata.",
+    "Ensure Emergency Banner is visible across all routes.",
+    "Use solid background colors (avoid glassmorphism and heavy gradients).",
+    "Add 'data-testid' to all buttons, links, and forms.",
+    "Use the provided image URLs to populate placeholder content without using text-based dummy image generators."
+  ]
+}
