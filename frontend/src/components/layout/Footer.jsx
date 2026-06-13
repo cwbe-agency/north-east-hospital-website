@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Clock, Plus } from "lucide-react";
 import contact from "@/data/contact";
 import navigation from "@/data/navigation";
 import departments from "@/data/departments";
+import hospitalLogo from "../../assets/logo.png";
 
 const Footer = () => (
   <footer
@@ -17,13 +18,11 @@ const Footer = () => (
           data-testid="footer-brand-link"
           className="flex items-center gap-3"
         >
-          <span
-            className="grid h-11 w-11 place-items-center rounded-xl text-white"
-            style={{ backgroundColor: "rgb(var(--color-primary-light))" }}
-            aria-hidden="true"
-          >
-            <Plus size={22} strokeWidth={2.5} />
-          </span>
+          <img
+            src={hospitalLogo}
+            alt="North East Multispeciality Hospital"
+            className="h-14 w-14 object-contain flex-shrink-0"
+          />
           <div className="leading-tight">
             <div
               className="font-bold text-white text-base"
